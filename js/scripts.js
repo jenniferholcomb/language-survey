@@ -67,14 +67,15 @@ function getAndSetSelection () {
 }
 
 function handleSelect(event) {
-  let form = document.querySelector("form");
+  let form = document.querySelector("select-form");
   form.onsubmit = function(event) {
     event.preventDefault();
     getAndSetSelection();
+    console.log("am i here");
   }
 }
 
-window.addEventListener("load", handleSelect) {
-  const form = document.getElementById("form");
-  form.addEventListener("")
+window.addEventListener("load", function() {
+  const form = document.getElementById("select-form");
+  form.addEventListener("submit", getAndSetSelection);
 });
