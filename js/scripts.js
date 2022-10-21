@@ -2,15 +2,16 @@
 
 // User Interface Logic
 function getAndSetSelection () {
-  const selection1 = parseInt(document.getElementById("answer1").value);
-  const selection2 = parseInt(document.getElementById("answer2").value);
-  const selection3 = parseInt(document.getElementById("answer3").value);
-  const selection4 = parseInt(document.getElementById("answer4").value);
-  const selection5 = parseInt(document.getElementById("answer5").value);
+  const selection1 = parseInt(document.getElementById("input1").value);
+  const selection2 = parseInt(document.getElementById("input2").value);
+  const selection3 = parseInt(document.getElementById("input3").value);
+  const selection4 = parseInt(document.getElementById("input4").value);
+  const selection5 = parseInt(document.getElementById("input5").value);
 
   let jsTally = 0;
   let cSharpTally = 0;
   let swiftTally = 0;
+  console.log(selection1);
 
   if (selection1 === 1) {
     jsTally = jsTally + 1;
@@ -67,15 +68,14 @@ function getAndSetSelection () {
 }
 
 function handleSelect(event) {
+  console.log("here"); 
   let form = document.querySelector("select-form");
-  form.onsubmit = function(event) {
-    event.preventDefault();
-    getAndSetSelection();
-    console.log("am i here");
-  }
+//  form.onsubmit = function(event) {
+  getAndSetSelection();
+  event.preventDefault();
 }
 
 window.addEventListener("load", function() {
   const form = document.getElementById("select-form");
-  form.addEventListener("submit", getAndSetSelection);
+  form.addEventListener("submit", handleSelect());
 });
