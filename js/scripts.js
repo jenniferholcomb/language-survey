@@ -10,31 +10,47 @@ function handleSelect(event) {
   const selection5 = parseInt(document.getElementById("answer5").value);
   const answerValue = selection1 + selection2 + selection3 + selection4 + selection5;
 
-  let result;
+  let jsTally = 0;
+  let cSharpTally = 0;
+  let swiftTally = 0;
 
   if (selection1 === 1) {
-    result = result + 1;
+    jsTally = jsTally + 1;
   }
 
   if (selection2 === 1) {
-    result = result + 1;
+    cSharpTally = cSharpTally + 1;
+    swiftTally = swiftTally + 1;
   }
 
   if (selection3 === 1) {
-    result = result + 1;
+    jsTally = jsTally + 1;
+    swiftTally = swiftTally + 1;
   }
 
   if (selection4 === 1) {
-    result = result + 1;
-  } else {
-
+    jsTally = jsTally + 1;
+    cSharpTally = cSharpTally + 1;
+    swiftTally = swiftTally + 1;
+  } else if (selection4 === 0){
+    jsTally = jsTally + 1;
+    cSharpTally = cSharpTally + 1;
   }
 
-  if (selection4 === 1) {
-    result = result + 1;
-  } else {
+  if (selection5 === 1) {
+    jsTally = jsTally + 1;
+    cSharpTally = cSharpTally + 1;
+  } else if (selection5 === 0) {
+    swiftTally = swiftTally + 1;
+  }
+
+  if (selection5 === 1) {
+    jsTally = jsTally + 1;
+    cSharpTally = cSharpTally + 1;
+  } else if (selection5 === 0) {
+    swiftTally = swiftTally + 1;
+  }
     
-  }
 }
 
 window.addEventListener("load", function() {
