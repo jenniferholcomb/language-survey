@@ -21,7 +21,7 @@ This browser application allows users to participate in a 5 question survey to d
 * Open index.html
 
 ## Known Bugs
-* 
+* Fine tuning branching results.
 * If any issues are discovered, please email jenniferlholcomb@gmail.com.
 
 ## License

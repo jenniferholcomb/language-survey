@@ -2,7 +2,6 @@
 
 // User Interface Logic
 function getAndSetSelection (event) {
-  event.preventDefault();
   const selection1 = parseInt(document.getElementById("input1").value);
   const selection2 = parseInt(document.getElementById("input2").value);
   const selection3 = parseInt(document.getElementById("input3").value);
@@ -70,13 +69,14 @@ function getAndSetSelection (event) {
 
 function handleSelect(event) {
   console.log("here"); 
-  let form = document.querySelector("select-form");
-//  form.onsubmit = function(event) {
-  getAndSetSelection(event);
-
+  let form = document.querySelector("form");
+  form.onsubmit = function(event) {
+    event.preventDefault();
+    getAndSetSelection(form);
+  };
 }
 
 window.addEventListener("load", function() {
   const form = document.getElementById("select-form");
-  form.addEventListener("submit", handleSelect());
+  form.addEventListener("submit", handleSelect(form));
 });
