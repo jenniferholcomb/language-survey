@@ -11,7 +11,30 @@ function handleSelect(event) {
   const answerValue = selection1 + selection2 + selection3 + selection4 + selection5;
 
   let result;
-  if (answerValue === 0)
+
+  if (selection1 === 1) {
+    result = result + 1;
+  }
+
+  if (selection2 === 1) {
+    result = result + 1;
+  }
+
+  if (selection3 === 1) {
+    result = result + 1;
+  }
+
+  if (selection4 === 1) {
+    result = result + 1;
+  } else {
+
+  }
+
+  if (selection4 === 1) {
+    result = result + 1;
+  } else {
+    
+  }
 }
 
 window.addEventListener("load", function() {
