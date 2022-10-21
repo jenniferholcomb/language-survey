@@ -9,14 +9,40 @@
   <title>Document</title>
 </head>
 <body>
+  <div>
   <h1>Welcome!</h1>
-    Do you have an interest in computer programming?
-    Great, let's take a short survey to help you decide which language you should learn first.
-    Are you interested in webpage development?
-    Or are you more intrigued by app and game development?
-    Are you interested in front-end development?
-    Do you prefer to work on a Mac or a PC?
-    Do you like dogs or cats?
-    OK. Come back if you change your mind!
+  <p>We hear you have an interest in computer programming.<br>Take the short survey below to help you decide which language you should learn first.</p>
+    <form id="surveyInfo>
+      <p id="error-message" class="hidden">Please enter yes or no.</p>
+      <label for="yes">Yes</label>
+      <input id="yes" type="text">
+      <label for="no">No</label>
+      <input id="no" type="text">
+      <button type="Submit">Give me your suggestion!</button>
+    </form>
+
+    <div id="JavaScript" class="hidden">
+      <h1>We recommend you learn the language JavaScript first!</h1>
+    </div>
+    <div id="C#" class="hidden">
+      <h1>We recommend you learn the language C# first!</h1>
+    </div>
+    <div id="Swift" class="hidden">
+      <h1>We recommend you learn the language Swift first!</h1>
+    </div>
+      <label for="input1">Do you have an interest in computer programming?<br></label>
+      <input id="input1" type="text" name="input1">
+      <label for="input2">Are you interested in webpage development?<br></label>
+      <input id="input2" type="text" name="input2">
+      <label for="input3">Or are you more intrigued by app and game development?<br></label>
+      <input id="input3" type="text" name="input3">
+      <label for="input4">Are you interested in front-end development?<br></label>
+      <input id="input4" type="text" name="input4">
+      <label for="input5">Do you prefer to work on a Mac or a PC?<br></label>
+      <input id="input5" type="text" name="input5">
+      <label for="input6">Do you like dogs or cats?<br></label>
+      <input id="input6" type="text" name="input6">
+    </form>
+  </div>
 </body>
 </html>
