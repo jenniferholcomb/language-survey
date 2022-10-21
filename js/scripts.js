@@ -44,13 +44,29 @@ function handleSelect(event) {
     swiftTally = swiftTally + 1;
   }
 
-  if (selection5 === 1) {
-    jsTally = jsTally + 1;
-    cSharpTally = cSharpTally + 1;
-  } else if (selection5 === 0) {
-    swiftTally = swiftTally + 1;
+  if (jsTally > cSharpTally && jsTally != cSharpTally) {
+    if (jsTally > swiftTally && jsTally != swiftTally) {
+      document.getElementById("javaScript").removeAttribute("class");
+    } else if (jsTally === swiftTally ) {
+      document.getElementById("javaScript").removeAttribute("class");
+      document.getElementById("swift").removeAttribute("class");
+    } else if (swiftTally > jsTally) {
+      document.getElementById("swift").removeAttribute("class");
+    }
+  } else if (cSharpTally === jsTally) {
+    document.getElementById("javaScript").removeAttribute("class");
+    document.getElementById("cShartTally").removeAttribute("class");
+  } else if (cSharpTally === swiftTally) {
+    document.getElementById("javaScript").removeAttribute("class");
+    document.getElementById("cShartTally").removeAttribute("class");
+  } else if (cSharpTally > swiftTally) {
+    document.getElementById("cShartTally").removeAttribute("class");
+  } else if (swiftTally > cSharpTally) {
+    document.getElementById("swiftTally").removeAttribute("class");
+  } else {
+    document.getElementById("none").removeAttribute("class");
   }
-    
+  
 }
 
 window.addEventListener("load", function() {
