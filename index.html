@@ -12,13 +12,13 @@
   <div>
   <h1>Welcome!</h1>
   <p>We hear you have an interest in computer programming.<br>Take the short survey below to help you decide which language you should learn first.</p>
-    <form id="surveyInfo>
-      <p id="error-message" class="hidden">Please enter yes or no.</p>
-      <label for="yes">Yes</label>
-      <input id="yes" type="text">
-      <label for="no">No</label>
-      <input id="no" type="text">
-      <button type="Submit">Give me your suggestion!</button>
+
+    <form id="select-form">
+      <select id="answer">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select>
+      <button type="submit">Submit Answer</button>
     </form>
 
     <div id="JavaScript" class="hidden">
@@ -30,7 +30,13 @@
     <div id="Swift" class="hidden">
       <h1>We recommend you learn the language Swift first!</h1>
     </div>
-      <label for="input1">Do you have an interest in computer programming?<br></label>
+    <div id="None" class="hidden">
+      <h1>Appears none of these languages are right for you.</h1>
+    </div>
+
+
+
+    <label for="input1">Do you have an interest in computer programming?<br></label>
       <input id="input1" type="text" name="input1">
       <label for="input2">Are you interested in webpage development?<br></label>
       <input id="input2" type="text" name="input2">
