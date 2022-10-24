@@ -1,6 +1,3 @@
-// Business Logic
-
-// User Interface Logic
 function getAndSetSelection (event) {
   const selection1 = parseInt(document.getElementById("input1").value);
   const selection2 = parseInt(document.getElementById("input2").value);
@@ -47,23 +44,18 @@ function getAndSetSelection (event) {
     if (jsTally > swiftTally && jsTally != swiftTally) {
       document.getElementById("javaScript").removeAttribute("class");
     } else if (jsTally === swiftTally ) {
-      document.getElementById("javaScript").removeAttribute("class");
-      document.getElementById("swift").removeAttribute("class");
+      document.getElementById("javaAndSwift").removeAttribute("class");
     } else if (swiftTally > jsTally) {
       document.getElementById("swift").removeAttribute("class");
     }
   } else if (cSharpTally === jsTally) {
-    document.getElementById("javaScript").removeAttribute("class");
-    document.getElementById("cSharp").removeAttribute("class");
+    document.getElementById("javaAndC").removeAttribute("class");
   } else if (cSharpTally === swiftTally) {
-    document.getElementById("javaScript").removeAttribute("class");
-    document.getElementById("cSharp").removeAttribute("class");
+    document.getElementById("cAndSwift").removeAttribute("class");
   } else if (cSharpTally > swiftTally) {
     document.getElementById("cSharp").removeAttribute("class");
   } else if (swiftTally > cSharpTally) {
     document.getElementById("swift").removeAttribute("class");
-  } else {
-    document.getElementById("none").removeAttribute("class");
   }
 }
 
