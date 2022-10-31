@@ -1,70 +1,81 @@
-function getAndSetSelection (event) {
-  const selection1 = parseInt(document.getElementById("input1").value);
-  const selection2 = parseInt(document.getElementById("input2").value);
-  const selection3 = parseInt(document.getElementById("input3").value);
-  const selection4 = parseInt(document.getElementById("input4").value);
-  const selection5 = parseInt(document.getElementById("input5").value);
+function getAndSetSelection() {
+  let selection1 = parseInt(document.getElementById("input1").value);
+  let selection2 = parseInt(document.getElementById("input2").value);
+  let selection3 = parseInt(document.getElementById("input3").value);
+  let selection4 = parseInt(document.getElementById("input4").value);
+  let selection5 = parseInt(document.getElementById("input5").value);
 
   let jsTally = 0;
   let cSharpTally = 0;
   let swiftTally = 0;
-  console.log(selection1);
 
   if (selection1 === 1) {
-    jsTally = jsTally + 1;
+    jsTally += 1;
   }
 
   if (selection2 === 1) {
-    cSharpTally = cSharpTally + 1;
-    swiftTally = swiftTally + 1;
+    cSharpTally += 1;
+    swiftTally += 1;
   }
 
   if (selection3 === 1) {
-    jsTally = jsTally + 1;
-    swiftTally = swiftTally + 1;
+    jsTally += 1;
+    swiftTally += 1;
   }
 
   if (selection4 === 1) {
-    jsTally = jsTally + 1;
-    cSharpTally = cSharpTally + 1;
-    swiftTally = swiftTally + 1;
+    jsTally += 1;
+    cSharpTally += 1;
+    swiftTally += 1;
   } else if (selection4 === 0){
-    jsTally = jsTally + 1;
-    cSharpTally = cSharpTally + 1;
+    jsTally += 1;
+    cSharpTally += 1;
   }
 
   if (selection5 === 1) {
-    jsTally = jsTally + 1;
-    cSharpTally = cSharpTally + 1;
+    jsTally += 1;
+    cSharpTally += 1;
   } else if (selection5 === 0) {
-    swiftTally = swiftTally + 1;
+    swiftTally += 1;
   }
 
+  let result = "";
   if (jsTally > cSharpTally && jsTally != cSharpTally) {
     if (jsTally > swiftTally && jsTally != swiftTally) {
-      document.getElementById("javaScript").removeAttribute("class");
+      result = "javaScript";
     } else if (jsTally === swiftTally ) {
-      document.getElementById("javaAndSwift").removeAttribute("class");
+      result = "javaAndSwift";
     } else if (swiftTally > jsTally) {
-      document.getElementById("swift").removeAttribute("class");
+      result = "swift";
     }
   } else if (cSharpTally === jsTally) {
-    document.getElementById("javaAndC").removeAttribute("class");
+    result = "javaAndC";
   } else if (cSharpTally === swiftTally) {
-    document.getElementById("cAndSwift").removeAttribute("class");
+    result = "cAndSwift";
   } else if (cSharpTally > swiftTally) {
-    document.getElementById("cSharp").removeAttribute("class");
+    result = "cSharp";
   } else if (swiftTally > cSharpTally) {
-    document.getElementById("swift").removeAttribute("class");
+    result = "swift";
   }
+  return result;
 }
 
-function handleSelect(event) {
-  console.log("here"); 
-  let form = document.querySelector("form");
+function hideResults() {
+  document.getElementById("javaScript").setAttribute("class", "hidden");
+  document.getElementById("javaAndSwift").setAttribute("class", "hidden");
+  document.getElementById("swift").setAttribute("class", "hidden");
+  document.getElementById("javaAndC").setAttribute("class", "hidden");
+  document.getElementById("cAndSwift").setAttribute("class", "hidden");
+  document.getElementById("cSharp").setAttribute("class", "hidden");
+}
+
+function handleSelect(form) {
   form.onsubmit = function(event) {
     event.preventDefault();
-    getAndSetSelection(form);
+    hideResults();
+    result = getAndSetSelection();
+    document.getElementById(result).removeAttribute("class");
+    document.querySelector("form#select-form").reset();
   };
 }
 
