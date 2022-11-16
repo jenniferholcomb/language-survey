@@ -73,7 +73,7 @@ function handleSelect(form) {
   form.onsubmit = function(event) {
     event.preventDefault();
     hideResults();
-    result = getAndSetSelection();
+    const result = getAndSetSelection();
     document.getElementById(result).removeAttribute("class");
     document.querySelector("form#select-form").reset();
   };
